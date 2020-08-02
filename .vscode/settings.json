@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 22,
+    "editor.lineHeight": 27,
+    //"python.pythonPath": "C:\\Program Files\\Python37\\python.exe",
+    "python.pythonPath": "S:\\ProgramFiles\\ANACONDA\\python.exe",
+    "files.defaultLanguage": "python",
+    "code-runner.saveFileBeforeRun": true, // run code前保存
+    "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息，默认false
+}
