@@ -35,6 +35,7 @@ class MainForm(QMainWindow, Ui_Form):
         self.Case_2.clicked.connect(self.case_2)
         self.Case_3.clicked.connect(self.case_3)
         self.Add_money.clicked.connect(self.money_money_money)
+        self.Money_money_money.returnPressed.connect(self.money_money_money)
         self.Cancel.clicked.connect(self.CancelButton)
         self.signal = ""
         self.a = len( tuple(ws.columns)[1] )
@@ -50,51 +51,51 @@ class MainForm(QMainWindow, Ui_Form):
         ws['c2'].value = int(ws['c2'].value) + 1
         wb.save(file_dir)
         self.signal = "c2"
-        self.label.setText(format(f"<可乐:{ws['c2'].value}>",
+        self.label.setText(format(f"可乐:{ws['c2'].value}",
                                   ' ^10s'))
         
     def oil_add_2(self):  
         ws['c3'].value = int(ws['c3'].value) + 1
         wb.save(file_dir)
         self.signal = "c3"
-        self.label.setText(format(f"<妹汁:{ws['c3'].value}>",
+        self.label.setText(format(f"妹汁:{ws['c3'].value}",
                                   ' ^10s'))
     def oil_add_3(self):  
         ws['c4'].value = int(ws['c4'].value) + 1
         wb.save(file_dir)
         self.signal = "c4"
-        self.label.setText(format(f"<炸虾:{ws['c4'].value}>",
+        self.label.setText(format(f"炸虾:{ws['c4'].value}",
                                   ' ^10s'))        
         
     def repair(self):
         ws['d2'].value = int(ws['d2'].value) + 1
         wb.save(file_dir)
         self.signal = "d2"
-        self.label.setText(format(f"<维修:{ws['d2'].value}>",
+        self.label.setText(format(f"维修:{ws['d2'].value}",
                                   ' ^10s'))        
     def ammo(self):
         ws['d3'].value = int(ws['d3'].value) + 1
         wb.save(file_dir)
         self.signal = "d3"
-        self.label.setText(format(f"<弹药:{ws['d3'].value}>",
+        self.label.setText(format(f"弹药:{ws['d3'].value}",
                                   ' ^10s'))          
     def case_1(self):
         ws['e2'].value = int(ws['e2'].value) + 1
         wb.save(file_dir)
         self.signal = "e2"
-        self.label.setText(format(f"<白箱:{ws['e2'].value}>",
+        self.label.setText(format(f"白箱:{ws['e2'].value}",
                                   ' ^10s'))          
     def case_2(self):
         ws['e3'].value = int(ws['e3'].value) + 1
         wb.save(file_dir)
         self.signal = "e3"
-        self.label.setText(format(f"<蓝箱:{ws['e3'].value}>",
+        self.label.setText(format(f"蓝箱:{ws['e3'].value}",
                                   ' ^10s'))     
     def case_3(self):
         ws['e4'].value = int(ws['e4'].value) + 1
         wb.save(file_dir)
         self.signal = "e4"
-        self.label.setText(format(f"<紫箱:{ws['e4'].value}>",
+        self.label.setText(format(f"紫箱:{ws['e4'].value}",
                                   ' ^10s'))             
     def money_money_money(self):
         num = self.Money_money_money.text()
@@ -104,7 +105,7 @@ class MainForm(QMainWindow, Ui_Form):
             ws[f'B{self.a+1}'].value = int(num)
             ws["d4"].value = int(self.a)
             self.label.setText \
-            (format(f"<物资:{ws[f'B{self.a+1}'].value}>",' ^10s')) 
+            (format(f"物资:{ws[f'B{self.a+1}'].value}",' ^10s')) 
             self.Money_money_money.setText("")
             wb.save(file_dir)
             self.signal = "my"
@@ -118,35 +119,35 @@ class MainForm(QMainWindow, Ui_Form):
         if self.signal == "c2":
             ws['c2'].value = int(ws['c2'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<可乐-1}>",' ^10s'))     
+            return self.label.setText(format("可乐-1",' ^10s'))     
         elif self.signal == "c3":
             ws['c3'].value = int(ws['c3'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<妹汁-1}>",' ^10s'))
+            return self.label.setText(format("妹汁-1",' ^10s'))
         elif self.signal == "c4":
             ws['c4'].value = int(ws['c4'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<炸虾-1}>",' ^10s'))
+            return self.label.setText(format("炸虾-1",' ^10s'))
         elif self.signal == "d2":
             ws['d2'].value = int(ws['d2'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<维修-1}>",' ^10s'))
+            return self.label.setText(format("维修-1",' ^10s'))
         elif self.signal == "d3":
             ws['d3'].value = int(ws['d3'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<弹药-1}>",' ^10s'))
+            return self.label.setText(format("弹药-1",' ^10s'))
         elif self.signal == "e2":
             ws['e2'].value = int(ws['e2'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<白箱-1}>",' ^10s'))
+            return self.label.setText(format("白箱-1",' ^10s'))
         elif self.signal == "e3":
             ws['e3'].value = int(ws['e3'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<蓝箱-1}>",' ^10s'))
+            return self.label.setText(format("蓝箱-1",' ^10s'))
         elif self.signal == "e4":
             ws['e4'].value = int(ws['e4'].value) - 1
             wb.save(file_dir)
-            return self.label.setText(format("<紫箱-1}>",' ^10s'))
+            return self.label.setText(format("紫箱-1",' ^10s'))
         elif self.signal == "my":
             ws[f'A{self.a}'].value = None
             ws[f'B{self.a}'].value = None
