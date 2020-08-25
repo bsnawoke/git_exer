@@ -4,8 +4,8 @@ Created on Wed Jul 22 00:27:27 2020
 @author: bsnawoke
 """
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.QtGui import QIcon # 图标
+from PySide2.QtWidgets import QApplication, QMainWindow
+from PySide2.QtGui import QIcon # 图标
 from gui import Ui_Form
 from openpyxl import load_workbook as loadwb
 '''
